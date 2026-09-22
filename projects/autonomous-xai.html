@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Counterfactual XAI 기반 자율비행 시스템 검증 | JINWOO KIM</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css"></head><body>
+<nav class="nav"><div class="container nav-inner"><a class="brand" href="../index.html"><span class="brand-mark">JK</span>JINWOO KIM</a><div class="nav-links"><a href="../index.html#about">About</a><a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></div></div></nav>
+<header class="page-hero"><div class="container"><div class="kicker">Project 01</div><h1>Counterfactual XAI 기반 자율비행 시스템 검증</h1><p class="lead">자율비행 객체탐지 모델이 실패하는 환경 조건을 더 빠르게 찾기 위한 AI 검증 프로젝트.</p><div class="page-meta"><span class="meta-pill">2026.03–06</span><span class="meta-pill">Team 4</span><span class="meta-pill">XAI Analysis</span><span class="meta-pill">Counterfactual Search</span></div></div></header>
+
+<section class="project-section"><div class="container">
+<h2>Problem</h2><p>자율비행 시스템의 객체탐지 모델은 기준 환경에서 높은 성능을 보이더라도 조도, 날씨, 배경 등 환경 조건이 변화하면 성능이 예상하지 못한 방식으로 저하될 수 있습니다. 가능한 모든 환경 조건을 무작위로 확인하는 방식은 많은 실험을 필요로 합니다.</p>
+<div class="callout">“모델이 실패하는 환경을 어떻게 더 빠르게 찾을 수 있을까?”</div>
+<p>객체탐지 모델의 baseline 대비 <b>mAP50이 15%p 이상 감소하는 조건을 실패 조건</b>으로 정의했습니다.</p>
+</div></section>
+<section class="project-section"><div class="container">
+<h2>My Contribution</h2>
+<div class="grid grid-3">
+<div class="card"><span class="focus-index">01 · ANALYZE</span><h3>환경 변수 영향도 분석</h3><p>환경 조건 변화가 객체탐지 성능에 미치는 영향을 분석했습니다.</p></div>
+<div class="card"><span class="focus-index">02 · IDENTIFY</span><h3>주요 저하 요인 식별</h3><p>성능 변화에 기여하는 주요 환경 요인을 구조화했습니다.</p></div>
+<div class="card"><span class="focus-index">03 · GUIDE</span><h3>탐색 방향 연결</h3><p>XAI 결과를 Counterfactual 탐색의 다음 방향을 결정하는 정보로 활용했습니다.</p></div>
+</div>
+<div class="callout">Why did performance decrease? → Where should we search next?</div>
+</div></section>
+<section class="project-section"><div class="container">
+<h2>Approach</h2>
+<div class="flow">
+<div class="flow-step"><b>01</b><span>Environment Variation</span></div>
+<div class="flow-step"><b>02</b><span>Object Detection</span></div>
+<div class="flow-step"><b>03</b><span>Performance Evaluation</span></div>
+<div class="flow-step"><b>04</b><span>XAI Analysis</span></div>
+<div class="flow-step"><b>05</b><span>Counterfactual Search</span></div>
+<div class="flow-step"><b>06</b><span>Failure Detection</span></div>
+</div>
+<div class="stat-grid">
+<div class="stat-box"><strong>-15%p</strong><span>Failure criterion</span></div>
+<div class="stat-box"><strong>10</strong><span>Max iterations</span></div>
+<div class="stat-box"><strong>0.15</strong><span>α</span></div>
+<div class="stat-box"><strong>TTFF</strong><span>Evaluation metric</span></div>
+</div>
+</div></section>
+<section class="project-section"><div class="container">
+<h2>Result</h2><p>TTFF(Time to First Failure)는 탐색 시작 후 최초 실패 조건을 발견하기까지 걸린 시간이며, 값이 작을수록 더 효율적인 탐색을 의미합니다.</p>
+<div class="chart-card">
+<div class="bar-row"><span>Random</span><div class="bar-track"><div class="bar-fill" style="width:68.4%"></div></div><b>69.79 s</b></div>
+<div class="bar-row"><span>Manual</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><b>102.05 s</b></div>
+<div class="bar-row"><span>LLM-only</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><b>66.34 s</b></div>
+<div class="bar-row"><span>Proposed</span><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div><b>34.68 s</b></div>
+</div>
+<div class="stat-grid"><div class="stat-box"><strong>34.68 s</strong><span>Proposed TTFF</span></div><div class="stat-box"><strong>50.3%</strong><span>Shorter than Random</span></div></div>
+<div class="lesson"><small>WHAT I LEARNED</small><strong>Explain → Identify → Search → Verify</strong><p>AI 시스템에서는 평균 성능뿐 아니라 어떤 조건에서 실패하는지를 찾고 설명하는 과정이 중요하다는 점을 배웠습니다. XAI 결과를 실제 검증 의사결정과 연결하며 모델 분석과 시스템 검증을 하나의 흐름으로 바라보는 경험을 했습니다.</p></div>
+</div></section>
+<section class="project-section"><div class="container">
+        <a class="next-project" href="manufacturing-xgb.html"><div><small>Next Project</small><h3>공작기계 진동 데이터 기반 이상 상태 분류</h3></div><span>→</span></a>
+        </div></section>
+<footer class="footer"><div class="container"><div class="footer-note">JINWOO KIM · Portfolio</div></div></footer>
+<script src="../script.js"></script></body></html>
