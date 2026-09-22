@@ -6,16 +6,11 @@
 - `index.html`: 메인 포트폴리오
 - `projects/`: 프로젝트 상세 페이지 4개
 - `style.css`: 반응형 디자인
-- `script.js`: 부드러운 스크롤
+- `script.js`: 모바일 메뉴 동작
 - `assets/favicon.svg`: 사이트 아이콘
 
-## 반드시 수정할 항목
-`index.html`에서:
-- `YOUR_EMAIL`
-- `https://github.com/`
-- `https://www.linkedin.com/`
-
-각 링크를 본인 링크로 변경하세요.
+## 연락처
+현재 사이트의 연락 링크는 Git 원격 저장소에서 확인한 `github.com/kjw0105` 프로필을 사용합니다. 이메일과 LinkedIn은 확인된 주소가 없어 표시하지 않았습니다. 공개할 주소가 준비되면 `index.html`의 Contact 영역에 추가하세요.
 
 ## GitHub Pages 배포
 1. GitHub 새 repository 생성

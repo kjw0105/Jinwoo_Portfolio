@@ -8,24 +8,25 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
 <nav class="nav">
 <div class="container nav-inner">
 <a class="brand" href="#top"><span class="brand-mark">JK</span>JINWOO KIM</a>
-<div class="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+<button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<div class="nav-links" id="primary-navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
 </div>
 </nav>
 
-<header class="hero" id="top"><div class="container">
+<main id="main"><header class="hero" id="top"><div class="container">
 <div class="hero-grid">
 <div>
 <div class="kicker">AI · Software · Industry</div>
-<h1>JINWOO<br>KIM</h1>
+<h1>JINWOO KIM</h1>
 <h2>I build AI and software solutions for real-world industrial systems.</h2>
 <p class="lead">AI와 데이터, 소프트웨어 기술을 활용해 <b>자율시스템 · 제조 · 방산 분야의 실제 문제를 해결합니다.</b></p>
 <div class="actions">
 <a class="btn primary" href="#projects">View Projects</a>
-<a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+<a class="btn" href="https://github.com/kjw0105" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 </div>
 <div class="metrics">
 <div class="metric-tile"><strong>4</strong><span>Featured projects</span></div>
@@ -49,7 +50,7 @@
 
 <section class="section-rule" id="about"><div class="container">
 <div class="section-head">
-<div><div class="kicker">About Me</div><h2 class="section-title">데이터를 통해 문제를 이해하고,<br>기술로 해결책을 만듭니다.</h2></div>
+<div><div class="kicker">About Me</div><h2 class="section-title">데이터를 통해 문제를 이해하고, 기술로 해결책을 만듭니다.</h2></div>
 <p class="section-desc">정치외교학으로 사회와 산업의 변화를 보는 시각을, 소프트웨어공학으로 그 문제를 직접 해결하는 도구를 배웠습니다.</p>
 </div>
 <div class="grid grid-2">
@@ -140,13 +141,11 @@
 </div>
 </div></section>
 
-<footer class="footer" id="contact"><div class="container">
-<div class="kicker">Contact</div><h2>Let’s solve real problems<br>with technology.</h2>
+</main><footer class="footer" id="contact"><div class="container">
+<div class="kicker">Contact</div><h2>Let’s solve real problems with technology.</h2>
 <p class="lead">AI와 소프트웨어를 활용해 실제 산업의 문제를 해결하는 일에 관심이 있습니다.</p>
 <div class="actions">
-<a class="btn primary" href="mailto:YOUR_EMAIL">Email</a>
-<a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+<a class="btn primary" href="https://github.com/kjw0105" target="_blank" rel="noopener noreferrer">GitHub 프로필 ↗</a>
 </div>
 <div class="footer-note">© 2026 JINWOO KIM · Portfolio</div>
 </div></footer>
