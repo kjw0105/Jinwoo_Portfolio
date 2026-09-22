@@ -18,14 +18,22 @@
 <p>주요 변수는 TDS, 수온, 탁도, Specific Flux 등으로 구성했습니다.</p>
 </div></section>
 <section class="project-section"><div class="container">
-<h2>Approach</h2>
-<div class="grid grid-2"><div class="card"><span class="focus-index">GREEDY SEARCH</span><h3>Threshold-based decision</h3><p>설정한 기준을 순차적으로 적용해 CIP 시점을 결정하는 직관적인 방식.</p></div><div class="card"><span class="focus-index">TABU SEARCH</span><h3>Explore a wider solution space</h3><p>여러 parameter 조합을 탐색하면서 더 나은 세척 전략을 찾도록 구성.</p></div></div>
-<p class="approach-note">λ를 변화시키며 <b>성능 저하 비용과 CIP 비용 사이의 trade-off</b>를 비교했습니다.</p>
+<h2>My Contribution</h2>
+<div class="grid grid-2 contribution-list"><div class="card"><span class="focus-index">01 · FORMULATE</span><h3>Problem Formulation</h3><p>막 성능 저하와 CIP 비용 사이의 trade-off를 최적화 문제로 구성했습니다.</p></div><div class="card"><span class="focus-index">02 · DATASET</span><h3>Dataset</h3><p>TDS, 수온, 탁도, Specific Flux 등 주요 변수를 구성했습니다.</p></div></div>
 </div></section>
 <section class="project-section"><div class="container">
+<h2>Approach</h2>
+<div class="grid grid-2 contribution-list"><div class="card"><span class="focus-index">GREEDY SEARCH</span><h3>Threshold-based decision</h3><p>설정한 기준을 순차적으로 적용해 CIP 시점을 결정하는 직관적인 방식.</p></div><div class="card"><span class="focus-index">TABU SEARCH</span><h3>Explore a wider solution space</h3><p>여러 parameter 조합을 탐색하면서 더 나은 세척 전략을 찾도록 구성.</p></div></div>
+<p class="approach-note">λ를 변화시키며 <b>성능 저하 비용과 CIP 비용 사이의 trade-off</b>를 비교했습니다.</p>
+<figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>Optimization Process</figcaption></figure>
+</div></section>
+<section class="project-section result-section"><div class="container">
 <h2>Result</h2>
 <div class="stat-grid"><div class="stat-box"><strong>10 → 5</strong><span>Greedy CIP count</span></div><div class="stat-box"><strong>65.97%</strong><span>Maximum objective improvement</span></div></div>
 <p>조건에 따라 기존 약 10회의 세척을 5회 수준까지 줄일 수 있었고, 특정 λ 조건에서는 기존 방식 대비 목적함수 기준 최대 65.97% 개선을 확인했습니다.</p>
+<figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>CIP / Objective Result Figure</figcaption></figure>
+</div></section>
+<section class="project-section lesson-section"><div class="container">
 <div class="lesson"><small>WHAT I LEARNED</small><strong>Analyze → Formulate → Optimize → Decide</strong><p>데이터 분석의 목적이 항상 예측 모델을 만드는 것은 아니라는 점을 배웠습니다. 시스템의 상태를 이해하고 실제 운영 의사결정 문제로 변환하는 경험을 했습니다.</p></div>
 </div></section>
 <section class="project-section"><div class="container">

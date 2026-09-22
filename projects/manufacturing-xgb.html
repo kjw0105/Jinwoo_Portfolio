@@ -13,18 +13,26 @@
 <div class="callout">“실제 이상 상태를 얼마나 놓치지 않는가?”</div>
 </div></section>
 <section class="project-section"><div class="container">
-<h2>Dataset & Pipeline</h2>
+<h2>My Contribution</h2>
+<div class="grid grid-3 contribution-list"><div class="card"><span class="focus-index">01 · DATA</span><h3>데이터 구조화</h3><p>대규모 진동 데이터를 구조화했습니다.</p></div><div class="card"><span class="focus-index">02 · MODELING</span><h3>Feature & XGBoost</h3><p>Feature Engineering과 XGBoost 모델링을 수행했습니다.</p></div><div class="card"><span class="focus-index">03 · EVALUATION</span><h3>NG 중심 평가</h3><p>NG 탐지를 우선해 평가 기준과 Threshold를 분석했습니다.</p></div></div>
+</div></section>
+<section class="project-section"><div class="container">
+<h2>Approach</h2><h3 class="detail-subhead">Dataset & Pipeline</h3>
 <div class="stat-grid"><div class="stat-box"><strong>244</strong><span>Unique RAW files</span></div><div class="stat-box"><strong>191</strong><span>OK</span></div><div class="stat-box"><strong>53</strong><span>NG</span></div><div class="stat-box"><strong>25.6kHz</strong><span>Sampling frequency</span></div></div>
 <div class="flow flow-four"><div class="flow-step"><b>01</b><span>RAW Processing</span></div><div class="flow-step"><b>02</b><span>Feature Engineering</span></div><div class="flow-step"><b>03</b><span>XGBoost Modeling</span></div><div class="flow-step"><b>04</b><span>Threshold Analysis</span></div></div>
+<figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>Feature / Pipeline Figure</figcaption></figure>
 </div></section>
 <section class="project-section"><div class="container">
 <h2>Evaluation Strategy</h2><p>제조 이상 탐지에서는 실제 NG를 정상으로 판단하는 <b>False Negative</b>가 중요한 위험이라고 보았습니다. 따라서 Accuracy 하나로 모델을 판단하지 않고 Recall, Precision, F1, F2, PR-AUC, ROC-AUC를 함께 확인했습니다.</p>
 </div></section>
-<section class="project-section"><div class="container">
+<section class="project-section result-section"><div class="container">
 <h2>Result</h2>
 <div class="stat-grid"><div class="stat-box"><strong>0.915</strong><span>NG Recall</span></div><div class="stat-box"><strong>0.759</strong><span>NG Precision</span></div><div class="stat-box"><strong>0.930</strong><span>PR-AUC</span></div><div class="stat-box"><strong>0.976</strong><span>ROC-AUC</span></div></div>
 <div class="table-wrap"><table><caption>OK·NG 분류 결과</caption><thead><tr><th scope="col">Actual / Predicted</th><th scope="col">Predicted OK</th><th scope="col">Predicted NG</th></tr></thead><tbody><tr><th scope="row">Actual OK</th><td>175</td><td>16</td></tr><tr class="em-row"><th scope="row">Actual NG</th><td>4</td><td>49</td></tr></tbody></table></div>
 <p>최종 Threshold는 <b>0.17</b>을 적용했습니다. 전체 NG 53건 중 49건을 탐지하는 방향으로 모델을 구성했습니다.</p>
+<figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>Confusion Matrix</figcaption></figure>
+</div></section>
+<section class="project-section lesson-section"><div class="container">
 <div class="lesson"><small>WHAT I LEARNED</small><strong>Define the Risk → Build the Model → Evaluate What Matters</strong><p>좋은 모델은 단순히 Accuracy가 높은 모델이 아니라 실제 문제에서 중요한 오류를 먼저 정의하고, 그 위험에 맞는 평가 기준을 선택한 모델이라는 점을 배웠습니다.</p></div>
 </div></section>
 <section class="project-section"><div class="container">
