@@ -3,19 +3,19 @@
 취업용 GitHub Pages 정적 포트폴리오입니다.
 
 ## 구성
-- `index.html`: 메인 포트폴리오
-- `projects/`: 프로젝트 상세 페이지 4개
+- `index.html`: 짧은 소개와 4개 프로젝트로 연결되는 메인 페이지
+- `projects/`: 프로젝트별 상세 사례 페이지 4개
 - `style.css`: 반응형 디자인
 - `script.js`: 모바일 메뉴 동작
 - `assets/favicon.svg`: 사이트 아이콘
 
 ## 연락처
-GitHub는 `github.com/kjw0105` 프로필로 연결됩니다. 공개 전에 `index.html`의 `mailto:YOUR_EMAIL`과 `https://www.linkedin.com/in/YOUR_LINKEDIN/`을 본인 주소로 교체하세요.
+Email, GitHub, LinkedIn 링크는 `index.html`의 Contact 영역에서 수정할 수 있습니다.
 
 ## 프로젝트 이미지 교체
 상세 페이지의 `.figure-placeholder` 안에서 `.figure-frame`의 안내 문구 `<span>`을 실제 `<img>`로 교체하면 됩니다. 이미지는 `assets/` 아래에 보관하고 `alt`에 그림 내용을 설명하세요. `figcaption`은 그림 제목으로 유지할 수 있습니다.
 
-메인 페이지의 Project 01 Figure도 `index.html`의 `.flagship-figure .figure-frame`에서 같은 방식으로 교체합니다.
+메인 페이지에는 Figure를 두지 않습니다. 프로젝트 이미지는 상세 사례 페이지에만 표시합니다.
 
 | 상세 페이지 | 첫 번째 이미지 | 두 번째 이미지 |
 | --- | --- | --- |
