@@ -4,9 +4,9 @@
 
 ## 구성
 - `index.html`: 소개 전용 Home
-- `about/index.html`: 전공과 관심 분야
+- `about/index.html`: 학력, 자기소개, 관심 분야
 - `experience/index.html`: 경험 타임라인
-- `education/index.html`: 전공과 학습 분야
+- `education/index.html`: 기존 주소 호환용 페이지 (상단 메뉴에는 표시하지 않음)
 - `projects/index.html`: 4개 프로젝트 목록
 - `projects/*.html`: 프로젝트별 상세 사례 페이지 4개
 - `activities/index.html`: 프로그램 및 연구 활동
@@ -19,7 +19,9 @@
 Email, GitHub, LinkedIn 링크는 `index.html`과 `contact/index.html`에서 수정할 수 있습니다.
 
 ## Navigation URL
-`about/`, `experience/`, `education/`, `contact/`, `projects/`, `activities/`는 각각 별도의 `index.html`로 연결됩니다. 프로젝트 상세 페이지는 `projects/` 아래의 개별 HTML 파일입니다.
+상단 메뉴는 `about/`, `experience/`, `contact/`, `projects/`, `activities/`로 연결됩니다. 학력 내용은 About Me에 통합했고, 기존 `education/` 주소는 유지합니다. 프로젝트 상세 페이지는 `projects/` 아래의 개별 HTML 파일입니다.
+
+Home 링크는 GitHub Pages 사용자 사이트 `https://kjw0105.github.io/` 기준으로 `/`를 사용합니다. `/index.html` 직접 접속 시 Home의 인라인 스크립트가 새로고침 없이 주소를 `/`로 정리합니다.
 
 ## 프로젝트 이미지 교체
 상세 페이지의 `.figure-placeholder` 안에서 `.figure-frame`의 안내 문구 `<span>`을 실제 `<img>`로 교체하면 됩니다. 이미지는 `assets/` 아래에 보관하고 `alt`에 그림 내용을 설명하세요. `figcaption`은 그림 제목으로 유지할 수 있습니다.
