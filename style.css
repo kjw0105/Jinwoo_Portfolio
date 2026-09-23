@@ -67,12 +67,10 @@ a { color: inherit; text-decoration: none; }
 .project-section p { max-width: 900px; color: var(--muted); }
 .project-section p b { color: var(--ink); }
 .project-section .callout { max-width: 900px; margin: 30px 0; padding: 0 0 0 22px; border-left: 3px solid var(--accent); color: var(--ink); font-size: clamp(1.35rem, 2.2vw, 2rem); font-weight: 680; line-height: 1.45; letter-spacing: -.035em; }
-.detail-subhead { margin: 0 0 16px; color: var(--ink); font-size: 1.18rem; }
 .contribution-list { margin-top: 22px; }
 .contribution-list .card { min-width: 0; padding: 20px 12px 0 0; border-top: 1px solid var(--ink); }
 .contribution-list .card h3 { margin-top: 12px; }
 .contribution-list .card p { font-size: .9rem; }
-.approach-note { margin-top: 24px; }
 .flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: 30px 0; }
 .flow-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .flow-step { min-width: 0; padding: 12px 8px 0 0; border-top: 2px solid var(--ink); }
@@ -98,13 +96,9 @@ th, td { padding: 11px 15px; border-top: 1px solid var(--line); text-align: left
 th { color: var(--ink); }
 .em-row { color: var(--mint-ink); background: var(--mint-soft); font-weight: 700; }
 .qual-result { color: var(--ink) !important; font-size: clamp(1.35rem, 2.1vw, 1.8rem); font-weight: 650; line-height: 1.5; }
-.figure-placeholder { max-width: 960px; margin: 44px 0 0; }
-.figure-frame { display: grid; place-items: center; min-height: 240px; padding: 24px; border: 1px dashed var(--line); background: var(--surface); color: var(--muted); text-align: center; font-size: .82rem; letter-spacing: .025em; }
-.figure-frame img { display: block; width: 100%; height: auto; max-height: 620px; object-fit: contain; }
-.figure-placeholder figcaption { margin-top: 10px; color: var(--muted); font-size: .77rem; font-weight: 650; }
 .lesson-section { padding-top: 54px; padding-bottom: 64px; }
 .lesson { max-width: 830px; padding-left: 18px; border-left: 3px solid var(--mint); }
-.lesson small { color: var(--mint-ink); font-size: .73rem; font-weight: 800; letter-spacing: .12em; }
+.lesson h2 { margin-bottom: 12px; }
 .lesson strong { display: block; margin-top: 12px; color: var(--ink); font-size: clamp(1.18rem, 1.8vw, 1.5rem); font-weight: 700; letter-spacing: -.03em; }
 .lesson p { margin: 12px 0 0; color: var(--muted); }
 .next-project { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-top: 1px solid var(--ink); }
@@ -113,15 +107,11 @@ th { color: var(--ink); }
 .next-project > span { color: var(--accent-ink); font-size: 1.7rem; }
 .next-project:hover h3 { color: var(--accent-ink); }
 
-/* Case studies: figure and text get separate scenes */
+/* Case study sections */
 .page-hero { display: flex; align-items: center; min-height: 75svh; padding: 76px 0; }
 .page-hero > .container { width: min(var(--max), calc(100% - 48px)); }
 .project-section { display: flex; align-items: center; min-height: 72svh; padding: 78px 0; }
 .project-section > .container { width: min(var(--max), calc(100% - 48px)); }
-.project-section.figure-scene { min-height: 88svh; background: var(--surface); }
-.figure-scene .figure-placeholder { max-width: 1080px; margin: 25px 0 0; }
-.figure-scene .figure-frame { min-height: min(58svh, 630px); }
-.figure-scene .figure-placeholder figcaption { margin-top: 12px; }
 .project-section.lesson-section { min-height: 60svh; }
 .project-section.next-section { min-height: 0; padding: 34px 0; }
 
@@ -141,13 +131,10 @@ th { color: var(--ink); }
   .page-hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .flow, .flow-four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .figure-frame { min-height: 180px; }
-  .page-hero, .project-section, .project-section.figure-scene, .project-section.lesson-section { min-height: 0; }
+  .page-hero, .project-section, .project-section.lesson-section { min-height: 0; }
   .page-hero > .container, .project-section > .container { width: min(var(--max), calc(100% - 32px)); }
   .page-hero { display: block; padding: 72px 0; }
   .project-section { display: block; padding: 68px 0; }
-  .project-section.figure-scene { padding: 70px 0; }
-  .figure-scene .figure-frame { min-height: 260px; }
 }
 
 @media (max-width: 420px) {

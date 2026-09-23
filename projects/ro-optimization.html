@@ -9,33 +9,25 @@
 <header class="page-hero"><div class="container"><div class="kicker">Project 03</div><h1>RO 비플럭스 분석 및 CIP Scheduling Optimization</h1><p class="lead">막 성능 저하와 세척 비용 사이의 trade-off를 고려해 CIP 시점을 최적화한 Purdue 프로젝트.</p><div class="page-meta"><span class="meta-pill">2026.06–07</span><span class="meta-pill">Purdue University</span><span class="meta-pill">Optimization</span><span class="meta-pill">Tabu Search</span></div></div></header>
 
 <section class="project-section"><div class="container">
-<h2>Problem</h2><p>RO 공정에서는 시간이 지나면서 막의 성능이 저하되고 이를 회복하기 위해 CIP 세척을 수행합니다. 세척을 자주 수행하면 운영 비용이 증가하지만 너무 늦게 수행하면 성능 저하로 인한 손실이 커집니다.</p>
-<div class="callout">“막의 성능과 세척 비용을 함께 고려할 때 언제 CIP를 수행해야 할까?”</div>
+<h2>Background</h2><p>RO 공정에서는 시간이 지나면서 막의 성능이 저하되고 이를 회복하기 위해 CIP 세척을 수행합니다. 세척을 자주 수행하면 운영 비용이 증가하지만 너무 늦게 수행하면 성능 저하로 인한 손실이 커집니다.</p>
 </div></section>
-<section class="project-section figure-scene"><div class="container"><div class="kicker">Figure 01 / Optimization Process</div><figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>Optimization Process</figcaption></figure></div></section>
-<section class="project-section"><div class="container">
-<h2>Dataset</h2>
+<section class="project-section objective-section"><div class="container">
+<h2>Objective</h2><p class="callout">막 성능 저하와 세척 비용을 함께 고려해 적절한 CIP 시점을 찾습니다.</p>
+</div></section>
+<section class="project-section structure-section"><div class="container">
+<h2>Structure</h2><div class="flow flow-four"><div class="flow-step"><b>01</b><span>Process Data</span></div><div class="flow-step"><b>02</b><span>Flux Analysis</span></div><div class="flow-step"><b>03</b><span>Cost Formulation</span></div><div class="flow-step"><b>04</b><span>CIP Scheduling</span></div></div>
+</div></section>
+<section class="project-section how-section"><div class="container">
+<h2>How It Works</h2><p>TDS, 수온, 탁도, Specific Flux 등 주요 변수를 구성하고 막 성능 저하와 CIP 비용 사이의 trade-off를 최적화 문제로 표현했습니다. Greedy Search로 기준을 순차 적용한 결과와 Tabu Search로 더 넓은 해 공간을 탐색한 결과를 비교하고, λ를 변화시키며 두 비용의 균형을 확인했습니다.</p>
 <div class="stat-grid"><div class="stat-box"><strong>13,104</strong><span>Hourly rows</span></div><div class="stat-box"><strong>6,547h</strong><span>Operation hours</span></div><div class="stat-box"><strong>10</strong><span>Observed CIP cycles</span></div><div class="stat-box"><strong>18 mo.</strong><span>2021.01–2022.06</span></div></div>
-<p>주요 변수는 TDS, 수온, 탁도, Specific Flux 등으로 구성했습니다.</p>
 </div></section>
 <section class="project-section"><div class="container">
-<h2>My Contribution</h2>
-<div class="grid grid-2 contribution-list"><div class="card"><span class="focus-index">01 · FORMULATE</span><h3>Problem Formulation</h3><p>막 성능 저하와 CIP 비용 사이의 trade-off를 최적화 문제로 구성했습니다.</p></div><div class="card"><span class="focus-index">02 · DATASET</span><h3>Dataset</h3><p>TDS, 수온, 탁도, Specific Flux 등 주요 변수를 구성했습니다.</p></div></div>
-</div></section>
-<section class="project-section"><div class="container">
-<h2>Approach</h2>
-<div class="grid grid-2 contribution-list"><div class="card"><span class="focus-index">GREEDY SEARCH</span><h3>Threshold-based decision</h3><p>설정한 기준을 순차적으로 적용해 CIP 시점을 결정하는 직관적인 방식.</p></div><div class="card"><span class="focus-index">TABU SEARCH</span><h3>Explore a wider solution space</h3><p>여러 parameter 조합을 탐색하면서 더 나은 세척 전략을 찾도록 구성.</p></div></div>
-<p class="approach-note">λ를 변화시키며 <b>성능 저하 비용과 CIP 비용 사이의 trade-off</b>를 비교했습니다.</p>
+<h2>My Contribution</h2><div class="grid grid-2 contribution-list"><div class="card"><span class="focus-index">01 · FORMULATE</span><h3>Problem Formulation</h3><p>막 성능 저하와 CIP 비용 사이의 trade-off를 최적화 문제로 구성했습니다.</p></div><div class="card"><span class="focus-index">02 · DATASET</span><h3>Dataset</h3><p>TDS, 수온, 탁도, Specific Flux 등 주요 변수를 구성했습니다.</p></div></div>
 </div></section>
 <section class="project-section result-section"><div class="container">
-<h2>Result</h2>
-<div class="stat-grid"><div class="stat-box"><strong>10 → 5</strong><span>Greedy CIP count</span></div><div class="stat-box"><strong>65.97%</strong><span>Maximum objective improvement</span></div></div>
-<p>조건에 따라 기존 약 10회의 세척을 5회 수준까지 줄일 수 있었고, 특정 λ 조건에서는 기존 방식 대비 목적함수 기준 최대 65.97% 개선을 확인했습니다.</p>
+<h2>Result</h2><div class="stat-grid"><div class="stat-box"><strong>10 → 5</strong><span>Greedy CIP count</span></div><div class="stat-box"><strong>65.97%</strong><span>Maximum objective improvement</span></div></div><p>조건에 따라 기존 약 10회의 세척을 5회 수준까지 줄일 수 있었고, 특정 λ 조건에서는 기존 방식 대비 목적함수 기준 최대 65.97% 개선을 확인했습니다.</p>
 </div></section>
-<section class="project-section figure-scene"><div class="container"><div class="kicker">Figure 02 / Result</div><figure class="figure-placeholder"><div class="figure-frame"><span>Project figure will be added here</span></div><figcaption>CIP / Objective Result Figure</figcaption></figure></div></section>
-<section class="project-section lesson-section"><div class="container">
-<div class="lesson"><small>WHAT I LEARNED</small><strong>Analyze → Formulate → Optimize → Decide</strong><p>데이터 분석의 목적이 항상 예측 모델을 만드는 것은 아니라는 점을 배웠습니다. 시스템의 상태를 이해하고 실제 운영 의사결정 문제로 변환하는 경험을 했습니다.</p></div>
-</div></section>
+<section class="project-section lesson-section"><div class="container"><div class="lesson"><h2>What I Learned</h2><strong>Analyze → Formulate → Optimize → Decide</strong><p>데이터 분석의 목적이 항상 예측 모델을 만드는 것은 아니라는 점을 배웠습니다. 시스템의 상태를 이해하고 실제 운영 의사결정 문제로 변환하는 경험을 했습니다.</p></div></div></section>
 <section class="project-section next-section"><div class="container">
         <a class="next-project" href="defense-strategy.html"><div><small>Next Project</small><h3>국제정세 변화 기반 방산 시장 분석</h3></div><span>→</span></a>
         </div></section>

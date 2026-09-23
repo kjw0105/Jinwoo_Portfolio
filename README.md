@@ -23,17 +23,8 @@ Email, GitHub, LinkedIn 링크는 `index.html`과 `contact/index.html`에서 수
 
 Home 링크는 GitHub Pages 사용자 사이트 `https://kjw0105.github.io/` 기준으로 `/`를 사용합니다. `/index.html` 직접 접속 시 Home의 인라인 스크립트가 새로고침 없이 주소를 `/`로 정리합니다.
 
-## 프로젝트 이미지 교체
-상세 페이지의 `.figure-placeholder` 안에서 `.figure-frame`의 안내 문구 `<span>`을 실제 `<img>`로 교체하면 됩니다. 이미지는 `assets/` 아래에 보관하고 `alt`에 그림 내용을 설명하세요. `figcaption`은 그림 제목으로 유지할 수 있습니다.
-
-메인 페이지에는 Figure를 두지 않습니다. 프로젝트 이미지는 상세 사례 페이지에만 표시합니다.
-
-| 상세 페이지 | 첫 번째 이미지 | 두 번째 이미지 |
-| --- | --- | --- |
-| `projects/autonomous-xai.html` | System / Method Overview Figure | TTFF Result Figure |
-| `projects/manufacturing-xgb.html` | Feature / Pipeline Figure | Confusion Matrix |
-| `projects/ro-optimization.html` | Optimization Process | CIP / Objective Result Figure |
-| `projects/defense-strategy.html` | Analysis Framework | Market / Scenario Diagram |
+## 프로젝트 상세 구조
+네 프로젝트 상세 페이지는 `Background → Objective → Structure → How It Works → My Contribution → Result → What I Learned` 순서로 구성됩니다. Figure placeholder는 사용하지 않으며 구조와 작동 방식은 텍스트 흐름으로 보여줍니다.
 
 ## GitHub Pages 배포
 1. GitHub 새 repository 생성
@@ -47,7 +38,4 @@ Home 링크는 GitHub Pages 사용자 사이트 `https://kjw0105.github.io/` 기
 
 ## 다음 업그레이드 추천
 - 실제 프로필 사진
-- 자율비행 프로젝트 구조도 / 논문 Figure
-- 공작기계 Confusion Matrix 이미지
-- Purdue 결과 그래프
 - 실제 GitHub / 논문 / PDF 링크
