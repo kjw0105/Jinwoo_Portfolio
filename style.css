@@ -171,10 +171,10 @@ th { color: var(--ink); }
 
 /* Shared navigation for every page */
 .nav-divider { width: 1px; height: 18px; background: var(--line); }
-.nav-links a[aria-current="page"] { color: var(--accent-ink); }
-.nav-links a[aria-current="page"]::after { content: ""; display: block; height: 2px; background: var(--mint); }
+.nav-links a[aria-current] { color: var(--accent-ink); }
+.nav-links a[aria-current]::after { content: ""; display: block; height: 2px; background: var(--mint); }
 
-/* Home: introduction only */
+/* Home: single-page portfolio */
 .landing { display: flex; align-items: center; min-height: calc(100svh - 68px); padding: 70px 0 90px; }
 .landing-content { max-width: 1060px; }
 .landing-hello { margin: 0 0 8px; color: var(--accent-ink); font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 700; }
@@ -183,10 +183,25 @@ th { color: var(--ink); }
 .landing-fields { margin: 19px 0 0; color: var(--accent-ink); font-size: .86rem; font-weight: 800; letter-spacing: .045em; }
 .landing-statement { max-width: 840px; margin: 46px 0 0; color: var(--ink); font-size: clamp(1.55rem, 2.65vw, 2.35rem); font-weight: 650; line-height: 1.34; letter-spacing: -.04em; }
 .landing-description { margin: 26px 0 0; color: var(--muted); font-size: clamp(.98rem, 1.2vw, 1.1rem); line-height: 1.8; }
-.landing-links { display: flex; flex-wrap: wrap; gap: 16px 30px; max-width: 560px; margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--line); }
-.landing-links a { color: var(--ink); font-size: .89rem; font-weight: 750; }
-.landing-links a span { color: var(--accent-ink); }
-.landing-links a:hover { color: var(--mint-ink); }
+.scroll-cue { display: inline-flex; align-items: center; gap: 12px; margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--ink); font-size: .84rem; font-weight: 750; }
+.scroll-cue span { color: var(--mint-ink); font-size: 1.1rem; }
+.home-section { padding: clamp(88px, 10vw, 142px) 0; border-top: 1px solid var(--line); scroll-margin-top: 68px; }
+.home-section.landing { padding: 70px 0 90px; border-top: 0; }
+.section-heading { max-width: 920px; }
+.section-heading h2 { margin: 18px 0 0; color: var(--ink); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 760; line-height: 1.16; letter-spacing: -.055em; }
+.section-description { max-width: 700px; margin: 24px 0 0; color: var(--muted); font-size: .98rem; }
+.about-home-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(48px, 8vw, 120px); margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--ink); }
+.about-home-lead p { margin: 0; color: var(--ink); font-size: clamp(1.25rem, 2.05vw, 1.7rem); font-weight: 650; line-height: 1.55; letter-spacing: -.035em; }
+.about-home-body p { margin: 0 0 20px; color: var(--muted); font-size: .97rem; line-height: 1.85; }
+.academic-summary { display: grid; grid-template-columns: .8fr 1fr 1.25fr; margin-top: 60px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.academic-summary > div { min-width: 0; padding: 23px 28px 23px 0; }
+.academic-summary > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
+.academic-summary span { display: block; color: var(--mint-ink); font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.academic-summary strong { display: block; margin-top: 8px; color: var(--ink); font-size: 1.02rem; line-height: 1.45; }
+.academic-summary small { display: block; margin-top: 6px; color: var(--muted); font-size: .79rem; line-height: 1.55; }
+.projects-home { background: #FBFEFD; }
+.contact-home { padding-bottom: 54px; }
+.contact-home .footer-note { margin-top: 100px; }
 
 /* Editorial index pages */
 .interior { min-height: calc(100svh - 68px); padding: clamp(68px, 8vw, 110px) 0 120px; }
@@ -211,7 +226,8 @@ th { color: var(--ink); }
 /* Experience and activities are text timelines */
 .experience-list, .activity-list, .education-list, .project-menu, .contact-list { margin-top: 72px; border-top: 1px solid var(--ink); }
 .experience-row, .activity-row, .education-row { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-.experience-row h2, .activity-row h2, .education-row h2 { margin: 0; color: var(--ink); font-size: clamp(1.15rem, 1.7vw, 1.45rem); font-weight: 730; line-height: 1.35; letter-spacing: -.025em; }
+.experience-row h2, .activity-row h2, .education-row h2,
+.experience-row h3, .activity-row h3 { margin: 0; color: var(--ink); font-size: clamp(1.15rem, 1.7vw, 1.45rem); font-weight: 730; line-height: 1.35; letter-spacing: -.025em; }
 .experience-row p, .activity-row p, .education-row p { max-width: 740px; margin: 9px 0 0; color: var(--muted); font-size: .93rem; line-height: 1.7; }
 .activity-row .activity-keywords { margin-top: 14px; color: var(--mint-ink); font-size: .75rem; font-weight: 750; letter-spacing: .035em; }
 
@@ -236,8 +252,12 @@ th { color: var(--ink); }
 
 @media (max-width: 920px) {
   .nav-divider { width: auto; height: 1px; margin: 8px 0; }
-  .nav-links a[aria-current="page"]::after { display: none; }
+  .nav-links a[aria-current]::after { display: none; }
   .about-layout { grid-template-columns: 1fr; gap: 24px; }
+  .about-home-grid { grid-template-columns: 1fr; gap: 28px; }
+  .academic-summary { grid-template-columns: 1fr; }
+  .academic-summary > div { padding: 19px 0; }
+  .academic-summary > div + div { padding-left: 0; border-top: 1px solid var(--line); border-left: 0; }
 }
 
 @media (max-width: 680px) {
@@ -247,6 +267,12 @@ th { color: var(--ink); }
   .landing-description { margin-top: 22px; }
   .desktop-break { display: none; }
   .landing-links { margin-top: 42px; }
+  .home-section { padding: 82px 0; }
+  .home-section.landing { min-height: calc(100svh - 68px); padding: 72px 0; }
+  .section-heading h2 { font-size: clamp(2.05rem, 9vw, 3.2rem); }
+  .about-home-grid { margin-top: 44px; }
+  .academic-summary { margin-top: 42px; }
+  .contact-home .footer-note { margin-top: 70px; }
   .interior { min-height: 0; padding: 66px 0 90px; }
   .interior-heading h1 { font-size: clamp(2.2rem, 9vw, 3.3rem); }
   .academic-background, .about-introduction { margin-top: 48px; }

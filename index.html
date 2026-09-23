@@ -4,49 +4,116 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JINWOO KIM | AI·소프트웨어 포트폴리오</title>
-  <meta name="description" content="김진우의 AI·소프트웨어 포트폴리오.">
+  <meta name="description" content="정치외교학과 소프트웨어공학을 바탕으로 AI와 데이터로 산업의 문제를 해결하는 김진우의 포트폴리오.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260923">
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <nav class="nav" aria-label="주요 메뉴">
     <div class="container nav-inner">
-      <a class="brand" href="/"><span class="brand-mark">JK</span>JINWOO KIM</a>
+      <a class="brand" href="#home"><span class="brand-mark">JK</span>JINWOO KIM</a>
       <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
       <div class="nav-links" id="primary-navigation">
-        <a href="about/">About me</a><a href="experience/">Experience</a><a href="contact/">Contact</a>
-        <span class="nav-divider" aria-hidden="true"></span>
-        <a href="projects/">Projects</a><a href="activities/">Activities</a>
+        <a href="#about">소개</a>
+        <a href="#experience">경험</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#activities">활동</a>
+        <a href="#contact">연락처</a>
       </div>
     </div>
   </nav>
 
-  <main class="landing container" id="main">
-    <div class="landing-content">
-      <p class="landing-hello">안녕하세요,</p>
-      <h1>JINWOO KIM<span class="landing-period">.</span></h1>
-      <p class="landing-fields">AI · 소프트웨어 · 자율시스템</p>
-      <p class="landing-statement">AI와 소프트웨어로<br class="desktop-break"> 실제 산업의 문제를 해결합니다.</p>
-      <p class="landing-description">정치외교학과 소프트웨어공학을 바탕으로<br class="desktop-break"> 데이터와 기술을 통해 실제 산업의 문제를 해결합니다.</p>
-      <div class="landing-links" aria-label="연락처와 프로필">
-        <a href="https://github.com/kjw0105" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="https://www.linkedin.com/in/%EC%A7%84%EC%9A%B0-%EA%B9%80-48b9b2416/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-        <a href="mailto:woozzang2016@naver.com">이메일 <span aria-hidden="true">↗</span></a>
+  <main id="main">
+    <section class="landing home-section" id="home" aria-labelledby="home-heading">
+      <div class="container">
+        <div class="landing-content">
+          <p class="landing-hello">안녕하세요,</p>
+          <h1 id="home-heading">JINWOO KIM<span class="landing-period">.</span></h1>
+          <p class="landing-fields">AI · 소프트웨어 · 자율시스템</p>
+          <p class="landing-statement">AI와 소프트웨어로<br class="desktop-break"> 실제 산업의 문제를 해결합니다.</p>
+          <p class="landing-description">정치외교학과 소프트웨어공학을 바탕으로<br class="desktop-break"> 데이터와 기술을 통해 실제 산업의 문제를 해결합니다.</p>
+          <a class="scroll-cue" href="#about">더 알아보기 <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="home-section about-home" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-heading">
+          <p class="kicker">소개</p>
+          <h2 id="about-heading">사회와 산업을 이해하고,<br>기술로 해결책을 만듭니다.</h2>
+        </header>
+        <div class="about-home-grid">
+          <div class="about-home-lead"><p>정치외교학을 통해 사회와 산업의 변화를 보는 시각을 길렀습니다. 직접 기술을 만들고 문제를 해결하기 위해 소프트웨어공학을 복수전공했습니다.</p></div>
+          <div class="about-home-body">
+            <p>두 전공을 공부하며 점점 축적되는 데이터를 어떻게 활용할지에 관심을 갖게 되었습니다. 자율비행 시스템 검증, 제조 설비 진동 데이터 분석, RO 공정 최적화를 경험하며 데이터 분석, 머신러닝, 최적화, 소프트웨어 검증을 공부했습니다.</p>
+            <p>가장 흥미를 느끼는 것은 문제를 데이터로 이해하고, 기술적 해결책을 만들고, 결과를 검증하는 과정입니다.</p>
+          </div>
+        </div>
+        <div class="academic-summary" aria-label="학력">
+          <div><span>학교</span><strong>경상국립대학교</strong></div>
+          <div><span>전공</span><strong>정치외교학</strong><small>국제정세 · 국가 간 관계 · 사회·산업환경의 변화</small></div>
+          <div><span>복수전공</span><strong>소프트웨어공학</strong><small>프로그래밍 · 알고리즘 · 소프트웨어 테스트 · AI</small></div>
+        </div>
+        <div class="interest-line"><span>관심 분야</span><p>AI · 데이터 · 자율시스템 · 제조 · 방위산업</p></div>
+      </div>
+    </section>
+
+    <section class="home-section" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <header class="section-heading"><p class="kicker">경험</p><h2 id="experience-heading">연구와 현장에서<br>문제를 다뤘습니다.</h2></header>
+        <div class="experience-list">
+          <article class="experience-row"><span class="experience-date">2026.06–07</span><div><h3>퍼듀대학교 여름 프로그램</h3><p>머신러닝과 최적화를 학습하고 RO 공정 최적화 프로젝트를 수행했습니다. 문제 정의와 데이터 분석을 담당하고 영문 발표자료와 질의응답을 검토해 최종 결과물을 제출했습니다.</p></div></article>
+          <article class="experience-row"><span class="experience-date">2026</span><div><h3>생성형 AI · 소프트웨어 검증 · 드론 연구</h3><p>생성형 AI, 소프트웨어 검증, 드론을 주제로 연구 활동에 참여하고 자율비행 AI 실패 조건 탐색 연구를 수행했습니다.</p></div></article>
+          <article class="experience-row"><span class="experience-date">2024.11–12</span><div><h3>태국 글로벌 리더십 프로그램</h3><p>UN ESCAP · UNHCR 등 국제기구를 방문하고 방문 내용을 정리한 최종 발표를 담당했습니다.</p></div></article>
+          <article class="experience-row"><span class="experience-date">약 2년</span><div><h3>맥도날드 — 팀 리더</h3><p>인원 운영, 고객 서비스, GEL 역할을 수행하고 지역 특화 제품 홍보 인터뷰와 촬영에 매장 대표로 참여했습니다.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section projects-home" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-heading"><p class="kicker">주요 프로젝트</p><h2 id="projects-heading">기술을 실제 문제에<br>적용한 기록입니다.</h2><p class="section-description">프로젝트를 선택하면 문제 정의부터 결과와 배운 점까지 정리한 상세 페이지로 이동합니다.</p></header>
+        <div class="project-menu">
+          <a class="project-menu-item" href="projects/autonomous-xai.html"><span class="preview-number">01</span><span class="menu-content"><strong>Counterfactual XAI 기반 자율비행 시스템 검증</strong><span>XAI · 자율시스템</span></span><span class="menu-arrow" aria-hidden="true">→</span></a>
+          <a class="project-menu-item" href="projects/manufacturing-xgb.html"><span class="preview-number">02</span><span class="menu-content"><strong>공작기계 진동 데이터 기반 이상 상태 분류</strong><span>머신러닝 · 제조</span></span><span class="menu-arrow" aria-hidden="true">→</span></a>
+          <a class="project-menu-item" href="projects/ro-optimization.html"><span class="preview-number">03</span><span class="menu-content"><strong>RO 비플럭스 분석 및 CIP 일정 최적화</strong><span>최적화 · 데이터</span></span><span class="menu-arrow" aria-hidden="true">→</span></a>
+          <a class="project-menu-item" href="projects/defense-strategy.html"><span class="preview-number">04</span><span class="menu-content"><strong>국제정세 변화 기반 방산 시장 분석</strong><span>방위산업 · 전략</span></span><span class="menu-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section" id="activities" aria-labelledby="activities-heading">
+      <div class="container">
+        <header class="section-heading"><p class="kicker">활동</p><h2 id="activities-heading">배우고 공유하며<br>관심 분야를 넓혔습니다.</h2></header>
+        <div class="activity-list">
+          <article class="activity-row"><span class="activity-index">01 / 국제 프로그램</span><div><h3>태국 글로벌 리더십 프로그램</h3><p>UN ESCAP · UNHCR 등 국제기구를 방문해 각 기관의 역할과 활동을 살펴보고, 방문 내용을 정리해 최종 발표를 담당했습니다.</p><p class="activity-keywords">국제기구 · 현장 방문 · 발표</p></div></article>
+          <article class="activity-row"><span class="activity-index">02 / 교육 프로그램</span><div><h3>퍼듀대학교 여름 프로그램</h3><p>머신러닝과 최적화를 학습하고 K-water RO 공정 데이터를 활용한 팀 프로젝트에 참여했습니다.</p><p class="activity-keywords">머신러닝 · 최적화 · 팀 프로젝트 · 영문 자료</p></div></article>
+          <article class="activity-row"><span class="activity-index">03 / 스터디</span><div><h3>인공지능부터 LLM 기초까지</h3><p>인공지능의 기본 개념부터 LLM 기초까지 단계적으로 공부하며 머신러닝과 생성형 AI가 연결되는 흐름을 이해했습니다.</p><p class="activity-keywords">AI 기초 · LLM 기초 · 스터디</p></div></article>
+          <article class="activity-row"><span class="activity-index">04 / 동아리</span><div><h3>교내 AI 스터디 동아리</h3><p>AI 관련 주제를 함께 학습하고 각자 정리한 내용을 공유하며 서로 다른 이해와 질문을 비교했습니다.</p><p class="activity-keywords">AI · 공동 학습 · 교내 동아리</p></div></article>
+          <article class="activity-row"><span class="activity-index">05 / 연구</span><div><h3>연구실 활동 — 3개월</h3><p>생성형 AI, 소프트웨어 검증, 드론 연구에 참여하고 XAI 분석 화면과 SHAP 기여도 시각화를 구현했습니다.</p><p class="activity-keywords">생성형 AI · 소프트웨어 검증 · 드론 연구 · XAI</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section contact-home" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-heading"><p class="kicker">연락처</p><h2 id="contact-heading">함께 이야기할 기회를<br>기다립니다.</h2></header>
+        <div class="contact-list">
+          <a href="mailto:woozzang2016@naver.com"><span>이메일</span><strong>woozzang2016@naver.com</strong><span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/kjw0105" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>github.com/kjw0105</strong><span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/%EC%A7%84%EC%9A%B0-%EA%B9%80-48b9b2416/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>프로필</strong><span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="footer-note">JINWOO KIM · AI &amp; SOFTWARE PORTFOLIO</p>
+      </div>
+    </section>
   </main>
   <script>
     if (window.location.pathname.endsWith('/index.html')) {
-      history.replaceState(
-        null,
-        '',
-        window.location.pathname.replace(/index.html$/, '') +
-          window.location.search +
-          window.location.hash
-      );
+      history.replaceState(null, '', window.location.pathname.replace(/index.html$/, '') + window.location.search + window.location.hash);
     }
   </script>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260923"></script>
 </body>
 </html>
