@@ -4,33 +4,39 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css"></head><body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-<nav class="nav" aria-label="주요 메뉴"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-mark">JK</span>JINWOO KIM</a><button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button><div class="nav-links" id="primary-navigation"><a href="../about/">About Me</a><a href="../experience/">Experience</a><a href="../contact/">Contact</a><span class="nav-divider" aria-hidden="true"></span><a href="../projects/" aria-current="page">Projects</a><a href="../activities/">Activities</a></div></div></nav>
+<nav class="nav" aria-label="주요 메뉴"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-mark">JK</span>JINWOO KIM</a><button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button><div class="nav-links" id="primary-navigation"><a href="../about/">소개</a><a href="../experience/">경험</a><a href="../contact/">연락처</a><span class="nav-divider" aria-hidden="true"></span><a href="../projects/" aria-current="page">프로젝트</a><a href="../activities/">활동</a></div></div></nav>
 <main id="main">
-<header class="page-hero"><div class="container"><div class="kicker">Project 02</div><h1>공작기계 진동 데이터 기반 이상 상태 분류</h1><p class="lead">진동 데이터를 활용해 이상 상태를 탐지하고 NG를 놓치지 않는 것을 우선한 머신러닝 프로젝트.</p><div class="page-meta"><span class="meta-pill">2026</span><span class="meta-pill">XGBoost</span><span class="meta-pill">Feature Engineering</span><span class="meta-pill">Threshold Analysis</span></div></div></header>
+<header class="page-hero"><div class="container"><div class="kicker">프로젝트 02</div><h1>공작기계 진동 데이터 기반 이상 상태 분류</h1><p class="lead">진동 데이터를 활용해 이상 상태를 탐지하고 NG를 놓치지 않는 것을 우선한 머신러닝 프로젝트.</p><div class="page-meta"><span class="meta-pill">2026</span><span class="meta-pill">XGBoost</span><span class="meta-pill">특징 설계</span><span class="meta-pill">임계값 분석</span></div></div></header>
 
 <section class="project-section"><div class="container">
-<h2>Background</h2><p>공작기계에서는 설비 상태를 나타내는 대규모 진동 데이터가 지속적으로 발생합니다. 정상 데이터에 비해 이상 데이터가 적은 환경에서는 Accuracy가 높더라도 실제 NG 상태를 놓칠 수 있습니다.</p>
+<h2>배경</h2><p>공작기계에서는 설비 상태를 나타내는 대규모 진동 데이터가 지속적으로 발생합니다. 정상 데이터에 비해 이상 데이터가 적은 환경에서는 정확도가 높더라도 실제 NG 상태를 놓칠 수 있습니다.</p>
+<p>이 프로젝트에서는 전체 정답률보다 실제 이상을 정상으로 판단하는 <b>거짓 음성(False Negative)을 줄이는 것</b>을 더 중요한 평가 관점으로 두었습니다.</p>
 </div></section>
 <section class="project-section objective-section"><div class="container">
-<h2>Objective</h2><p class="callout">진동 데이터에서 실제 이상 상태를 놓치지 않는 분류 모델과 평가 기준을 설계합니다.</p>
+<h2>목적</h2><p class="callout">진동 데이터에서 실제 이상 상태를 놓치지 않는 분류 모델과 평가 기준을 설계합니다.</p>
 </div></section>
 <section class="project-section structure-section"><div class="container">
-<h2>Structure</h2><div class="flow flow-four"><div class="flow-step"><b>01</b><span>RAW Processing</span></div><div class="flow-step"><b>02</b><span>Feature Engineering</span></div><div class="flow-step"><b>03</b><span>XGBoost Modeling</span></div><div class="flow-step"><b>04</b><span>Threshold Analysis</span></div></div>
+<h2>구조</h2><p class="section-intro">원시 진동 데이터를 분석 가능한 형태로 정리한 뒤 특징을 구성하고, 모델 학습과 임계값 분석까지 하나의 파이프라인으로 연결했습니다.</p><div class="flow flow-four"><div class="flow-step"><b>01</b><span>RAW 데이터 처리</span></div><div class="flow-step"><b>02</b><span>특징 설계</span></div><div class="flow-step"><b>03</b><span>XGBoost 모델링</span></div><div class="flow-step"><b>04</b><span>임계값 분석</span></div></div>
 </div></section>
 <section class="project-section how-section"><div class="container">
-<h2>How It Works</h2><p>RAW 진동 데이터를 구조화하고 특징을 구성한 뒤 XGBoost로 OK·NG 상태를 분류했습니다. 실제 NG를 정상으로 판단하는 <b>False Negative</b>를 중요한 위험으로 보고, Accuracy뿐 아니라 Recall, Precision, F1, F2, PR-AUC, ROC-AUC를 함께 확인하며 Threshold를 분석했습니다.</p>
-<div class="stat-grid"><div class="stat-box"><strong>244</strong><span>Unique RAW files</span></div><div class="stat-box"><strong>191</strong><span>OK</span></div><div class="stat-box"><strong>53</strong><span>NG</span></div><div class="stat-box"><strong>25.6kHz</strong><span>Sampling frequency</span></div></div>
+<h2>작동 방식</h2>
+<div class="mechanism-list">
+<div><span>01</span><p><b>데이터 구조화</b> — 244개 RAW 파일의 진동 데이터를 OK 191건과 NG 53건으로 구성하고 분석 가능한 형태로 정리했습니다.</p></div>
+<div><span>02</span><p><b>모델 구성</b> — 25.6kHz로 수집된 진동 데이터에서 특징을 구성하고 XGBoost로 OK·NG 상태를 분류했습니다.</p></div>
+<div><span>03</span><p><b>평가 기준 선택</b> — 재현율, 정밀도, F1, F2, PR-AUC, ROC-AUC를 함께 확인하며 NG 탐지에 맞는 임계값을 분석했습니다.</p></div>
+</div>
+<div class="stat-grid"><div class="stat-box"><strong>244</strong><span>고유 RAW 파일</span></div><div class="stat-box"><strong>191</strong><span>OK</span></div><div class="stat-box"><strong>53</strong><span>NG</span></div><div class="stat-box"><strong>25.6kHz</strong><span>샘플링 주파수</span></div></div>
 </div></section>
 <section class="project-section"><div class="container">
-<h2>My Contribution</h2><div class="grid grid-3 contribution-list"><div class="card"><span class="focus-index">01 · DATA</span><h3>데이터 구조화</h3><p>대규모 진동 데이터를 구조화했습니다.</p></div><div class="card"><span class="focus-index">02 · MODELING</span><h3>Feature & XGBoost</h3><p>Feature Engineering과 XGBoost 모델링을 수행했습니다.</p></div><div class="card"><span class="focus-index">03 · EVALUATION</span><h3>NG 중심 평가</h3><p>NG 탐지를 우선해 평가 기준과 Threshold를 분석했습니다.</p></div></div>
+<h2>담당한 부분</h2><div class="grid grid-3 contribution-list"><div class="card"><span class="focus-index">01 · 데이터</span><h3>데이터 구조화</h3><p>대규모 진동 데이터를 구조화했습니다.</p></div><div class="card"><span class="focus-index">02 · 모델링</span><h3>특징 설계 및 XGBoost</h3><p>특징 설계와 XGBoost 모델링을 수행했습니다.</p></div><div class="card"><span class="focus-index">03 · 평가</span><h3>NG 중심 평가</h3><p>NG 탐지를 우선해 평가 기준과 임계값을 분석했습니다.</p></div></div>
 </div></section>
 <section class="project-section result-section"><div class="container">
-<h2>Result</h2><div class="stat-grid"><div class="stat-box"><strong>0.915</strong><span>NG Recall</span></div><div class="stat-box"><strong>0.759</strong><span>NG Precision</span></div><div class="stat-box"><strong>0.930</strong><span>PR-AUC</span></div><div class="stat-box"><strong>0.976</strong><span>ROC-AUC</span></div></div>
-<div class="table-wrap"><table><caption>OK·NG 분류 결과</caption><thead><tr><th scope="col">Actual / Predicted</th><th scope="col">Predicted OK</th><th scope="col">Predicted NG</th></tr></thead><tbody><tr><th scope="row">Actual OK</th><td>175</td><td>16</td></tr><tr class="em-row"><th scope="row">Actual NG</th><td>4</td><td>49</td></tr></tbody></table></div><p>최종 Threshold는 <b>0.17</b>을 적용했습니다. 전체 NG 53건 중 49건을 탐지하는 방향으로 모델을 구성했습니다.</p>
+<h2>결과</h2><div class="stat-grid"><div class="stat-box"><strong>0.915</strong><span>NG 재현율</span></div><div class="stat-box"><strong>0.759</strong><span>NG 정밀도</span></div><div class="stat-box"><strong>0.930</strong><span>PR-AUC</span></div><div class="stat-box"><strong>0.976</strong><span>ROC-AUC</span></div></div>
+<div class="table-wrap"><table><caption>OK·NG 분류 결과</caption><thead><tr><th scope="col">실제 / 예측</th><th scope="col">예측 OK</th><th scope="col">예측 NG</th></tr></thead><tbody><tr><th scope="row">실제 OK</th><td>175</td><td>16</td></tr><tr class="em-row"><th scope="row">실제 NG</th><td>4</td><td>49</td></tr></tbody></table></div><p>최종 임계값은 <b>0.17</b>을 적용했습니다. 전체 NG 53건 중 49건을 탐지하는 방향으로 모델을 구성했습니다.</p>
 </div></section>
-<section class="project-section lesson-section"><div class="container"><div class="lesson"><h2>What I Learned</h2><strong>Define the Risk → Build the Model → Evaluate What Matters</strong><p>좋은 모델은 단순히 Accuracy가 높은 모델이 아니라 실제 문제에서 중요한 오류를 먼저 정의하고, 그 위험에 맞는 평가 기준을 선택한 모델이라는 점을 배웠습니다.</p></div></div></section>
+<section class="project-section lesson-section"><div class="container"><div class="lesson"><h2>배운 점</h2><strong>위험 정의 → 모델 구축 → 중요한 기준으로 평가</strong><p>좋은 모델은 단순히 정확도가 높은 모델이 아니라 실제 문제에서 중요한 오류를 먼저 정의하고, 그 위험에 맞는 평가 기준을 선택한 모델이라는 점을 배웠습니다.</p></div></div></section>
 <section class="project-section next-section"><div class="container">
-        <a class="next-project" href="ro-optimization.html"><div><small>Next Project</small><h3>RO 비플럭스 분석 및 CIP Scheduling Optimization</h3></div><span>→</span></a>
+        <a class="next-project" href="ro-optimization.html"><div><small>다음 프로젝트</small><h3>RO 비플럭스 분석 및 CIP 일정 최적화</h3></div><span>→</span></a>
         </div></section>
-</main><footer class="footer"><div class="container"><div class="footer-note">JINWOO KIM · Portfolio</div></div></footer>
+</main><footer class="footer"><div class="container"><div class="footer-note">JINWOO KIM · 포트폴리오</div></div></footer>
 <script src="../script.js"></script></body></html>

@@ -24,7 +24,7 @@ Email, GitHub, LinkedIn 링크는 `index.html`과 `contact/index.html`에서 수
 Home 링크는 GitHub Pages 사용자 사이트 `https://kjw0105.github.io/` 기준으로 `/`를 사용합니다. `/index.html` 직접 접속 시 Home의 인라인 스크립트가 새로고침 없이 주소를 `/`로 정리합니다.
 
 ## 프로젝트 상세 구조
-네 프로젝트 상세 페이지는 `Background → Objective → Structure → How It Works → My Contribution → Result → What I Learned` 순서로 구성됩니다. Figure placeholder는 사용하지 않으며 구조와 작동 방식은 텍스트 흐름으로 보여줍니다.
+네 프로젝트 상세 페이지는 `배경 → 목적 → 구조 → 작동 방식 → 담당한 부분 → 결과 → 배운 점` 순서로 구성됩니다. 이미지 자리표시는 사용하지 않으며 구조와 작동 방식은 텍스트 흐름으로 보여줍니다.
 
 ## GitHub Pages 배포
 1. GitHub 새 repository 생성
