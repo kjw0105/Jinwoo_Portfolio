@@ -10,34 +10,44 @@
 
 <section class="project-section"><div class="container">
 <h2>배경</h2>
-<p>자율비행 시스템의 객체탐지 모델은 기준 환경에서 높은 성능을 보이더라도 조도, 날씨, 배경 등 환경 조건이 변하면 성능이 예상하지 못한 방식으로 저하될 수 있습니다. 가능한 모든 환경 조건을 무작위로 확인하는 방식은 많은 실험을 필요로 합니다.</p>
-<p>따라서 평균 성능을 확인하는 것에 더해, <b>어떤 환경에서 실패하는지 효율적으로 찾고 성능 저하에 영향을 준 요인을 설명하는 검증 과정</b>이 필요했습니다.</p>
+<p>자율비행 객체탐지 모델은 정상 환경에서 높은 성능을 보이더라도 안개, 저조도, 센서 노이즈와 같은 환경 변화에 따라 탐지 성능이 저하될 수 있습니다. 가능한 환경 조합을 모두 무작위로 시험하면 많은 평가 비용이 필요합니다.</p>
+<p>따라서 평균 성능을 확인하는 것에 더해, <b>성능 저하에 영향을 주는 환경변수를 설명하고 실패에 가까운 조건을 우선 탐색하는 검증 방법</b>이 필요했습니다.</p>
+<div class="phase-list" aria-label="프로젝트 진행 단계">
+<div><span>01 · 캡스톤 프로토타입</span><p>MATLAB/Simulink 시뮬레이션에 XAI 분석과 LLM 기반 반사실 환경 생성을 연결하고, 실패 조건 탐색과 실시간 모니터링 흐름을 구현했습니다.</p></div>
+<div><span>02 · 후속 연구 확장</span><p>YOLOv8의 탐지 성능을 대상으로 안개·조도·센서 노이즈의 Shapley 영향도를 계산하고 비실패·실패 경계를 확인하는 연구로 확장했습니다.</p></div>
+</div>
 </div></section>
 <section class="project-section objective-section"><div class="container">
 <h2>목적</h2>
-<p class="callout">모델이 실패하는 환경 조건을 기존 탐색보다 빠르게 발견하는 검증 방법을 설계합니다.</p>
+<p class="callout">객체탐지 성능 저하에 기여한 환경변수를 설명하고, 그 결과를 다음 환경 조건 탐색에 연결해 실패 경계를 효율적으로 찾는 검증 흐름을 설계합니다.</p>
 <p>객체탐지 모델의 기준 성능 대비 <b>mAP50이 15%p 이상 감소하는 조건을 실패 조건</b>으로 정의했습니다.</p>
 </div></section>
 <section class="project-section structure-section"><div class="container">
 <h2>구조</h2>
 <p class="section-intro">환경을 변화시킨 뒤 객체탐지 성능을 평가하고, XAI 분석 결과를 다음 탐색에 반영하는 반복 구조로 설계했습니다.</p>
-<div class="flow">
-<div class="flow-step"><b>01</b><span>환경 조건 변화</span></div><div class="flow-step"><b>02</b><span>객체탐지</span></div><div class="flow-step"><b>03</b><span>성능 평가</span></div><div class="flow-step"><b>04</b><span>XAI 분석</span></div><div class="flow-step"><b>05</b><span>반사실 탐색</span></div><div class="flow-step"><b>06</b><span>실패 탐지</span></div>
+<div class="flow flow-seven">
+<div class="flow-step"><b>01</b><span>환경 조건 생성</span></div><div class="flow-step"><b>02</b><span>자율비행 시뮬레이션</span></div><div class="flow-step"><b>03</b><span>YOLO 객체탐지</span></div><div class="flow-step"><b>04</b><span>mAP 평가</span></div><div class="flow-step"><b>05</b><span>XAI 영향도 분석</span></div><div class="flow-step"><b>06</b><span>반사실 조건 생성</span></div><div class="flow-step"><b>07</b><span>실패 경계 확인</span></div>
 </div>
 </div></section>
 <section class="project-section how-section"><div class="container">
 <h2>작동 방식</h2>
 <div class="mechanism-list">
-<div><span>01</span><p><b>실패 기준 정의</b> — 기준 환경의 mAP50과 비교해 성능이 15%p 이상 감소한 조건을 실패로 판단했습니다.</p></div>
-<div><span>02</span><p><b>원인 분석</b> — 성능이 저하된 조건에서 XAI를 활용해 조도, 날씨, 배경 등 환경 변수의 영향을 분석했습니다.</p></div>
-<div><span>03</span><p><b>탐색 방향 결정</b> — 분석 결과를 반사실 탐색에 연결하고, 다음으로 확인할 환경 조건을 정해 최초 실패 발견 시간을 측정했습니다.</p></div>
+<div><span>01</span><p><b>환경 변화</b> — 안개, 조도, 센서 노이즈 등 객체탐지에 영향을 줄 수 있는 환경변수를 변화시켰습니다.</p></div>
+<div><span>02</span><p><b>성능 평가</b> — YOLO 객체탐지 모델의 mAP 변화를 측정하고 기준 성능 대비 15%p 이상 감소한 조건을 실패로 판단했습니다.</p></div>
+<div><span>03</span><p><b>영향도 계산</b> — SHAP·Shapley 기반 분석으로 각 환경변수가 성능 저하에 기여한 정도와 우선순위를 계산했습니다.</p></div>
+<div><span>04</span><p><b>반사실 탐색</b> — 캡스톤 단계에서는 영향도가 높은 변수를 LLM 기반 반사실 시나리오 생성과 연결해 다음 탐색 조건을 정했습니다.</p></div>
+<div><span>05</span><p><b>경계 확인</b> — 후속 연구에서는 환경을 순차적으로 악화시키며 마지막 비실패 조건과 최초 실패 조건 사이의 경계를 확인했습니다.</p></div>
 </div>
 <div class="stat-grid"><div class="stat-box"><strong>-15%p</strong><span>실패 기준</span></div><div class="stat-box"><strong>10</strong><span>최대 반복 횟수</span></div><div class="stat-box"><strong>0.15</strong><span>α</span></div><div class="stat-box"><strong>TTFF</strong><span>평가 지표</span></div></div>
 </div></section>
 <section class="project-section"><div class="container">
 <h2>담당한 부분</h2>
-<div class="grid grid-3 contribution-list">
-<div class="card"><span class="focus-index">01 · 분석</span><h3>환경 변수 영향도 분석</h3><p>환경 조건 변화가 객체탐지 성능에 미치는 영향을 분석했습니다.</p></div><div class="card"><span class="focus-index">02 · 식별</span><h3>주요 저하 요인 식별</h3><p>성능 변화에 기여하는 주요 환경 요인을 구조화했습니다.</p></div><div class="card"><span class="focus-index">03 · 탐색 연결</span><h3>탐색 방향 연결</h3><p>XAI 결과를 반사실 탐색의 다음 방향을 결정하는 정보로 활용했습니다.</p></div>
+<p class="section-intro">팀의 시뮬레이션·LLM 모듈과 연결되는 XAI 분석 영역을 맡고, 분석 결과가 구현 화면과 연구 결과물에서 일관되게 전달되도록 정리했습니다.</p>
+<div class="mechanism-list contribution-detail">
+<div><span>01 · 구현</span><p><b>XAI 브랜치 개발</b> — XAI 전용 브랜치에서 실시간 모니터링이 끊기지 않도록 화면 동작을 수정하고 Streamlit 기반 분석 화면을 구성했습니다.</p></div>
+<div><span>02 · 시각화</span><p><b>영향도 표현</b> — 히스토리 분석에 SHAP 기반 요소별 기여도 도표를 추가해 환경변수의 영향을 확인할 수 있도록 했습니다.</p></div>
+<div><span>03 · 연결</span><p><b>탐색 정보 구성</b> — XAI 결과를 주요 성능 저하 요인과 다음 환경 조건을 정하는 정보로 구조화했습니다.</p></div>
+<div><span>04 · 연구 결과물</span><p><b>논문과 문서 정리</b> — KCC 캡스톤 논문을 수정·제출하고, 후속 KCI 원고의 요약·제안 방법과 표·그림의 영문 표기를 정리했습니다.</p></div>
 </div>
 <div class="callout contribution-callout">성능은 왜 낮아졌는가? → 다음에는 어디를 탐색해야 하는가?</div>
 </div></section>
@@ -45,6 +55,11 @@
 <h2>결과</h2><p>TTFF(최초 실패 발견 시간)는 탐색 시작 후 최초 실패 조건을 발견하기까지 걸린 시간이며, 값이 작을수록 더 효율적인 탐색을 의미합니다.</p>
 <div class="chart-card" role="img" aria-label="최초 실패 발견 시간: 랜덤 69.79초, 수동 102.05초, LLM 단독 66.34초, 제안 방식 34.68초"><div class="bar-row"><span>랜덤</span><div class="bar-track"><div class="bar-fill" style="width:68.4%"></div></div><b>69.79초</b></div><div class="bar-row"><span>수동</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><b>102.05초</b></div><div class="bar-row"><span>LLM 단독</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><b>66.34초</b></div><div class="bar-row"><span>제안 방식</span><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div><b>34.68초</b></div></div>
 <div class="stat-grid"><div class="stat-box"><strong>34.68초</strong><span>제안 방식 TTFF</span></div><div class="stat-box"><strong>50.3%</strong><span>랜덤 대비 단축</span></div></div>
+<div class="follow-up-result">
+<h3>후속 검증</h3>
+<p>후속 연구의 독립시험 10개에서는 최상위 환경변수 일치 6개, 판정 불가 3개, 불일치 1개가 나타났습니다. 판정 가능한 7개 중 6개에서 최상위 변수가 일치했고, 두 개발시험에서 진행도 0.9와 1.0 사이의 비실패·실패 조건쌍을 확인했습니다.</p>
+<p class="limitation"><b>검증 범위</b> — 사전에 정한 7개 이상의 명확한 일치 기준에는 도달하지 못했습니다. 이 단계에서는 Shapley 순서의 탐색 효율이나 다른 순서 대비 우수성을 검증하지 않았으며, LLM/DSPy는 향후 확장 범위로 남겼습니다.</p>
+</div>
 </div></section>
 <section class="project-section lesson-section"><div class="container"><div class="lesson"><h2>배운 점</h2><strong>설명 → 식별 → 탐색 → 검증</strong><p>AI 시스템에서는 평균 성능뿐 아니라 어떤 조건에서 실패하는지를 찾고 설명하는 과정이 중요하다는 점을 배웠습니다. XAI 결과를 실제 검증 의사결정과 연결하며 모델 분석과 시스템 검증을 하나의 흐름으로 바라보는 경험을 했습니다.</p></div></div></section>
 <section class="project-section next-section"><div class="container">

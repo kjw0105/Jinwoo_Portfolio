@@ -16,7 +16,7 @@
 <h2>목적</h2><p class="callout">진동 데이터에서 실제 이상 상태를 놓치지 않는 분류 모델과 평가 기준을 설계합니다.</p>
 </div></section>
 <section class="project-section structure-section"><div class="container">
-<h2>구조</h2><p class="section-intro">원시 진동 데이터를 분석 가능한 형태로 정리한 뒤 특징을 구성하고, 모델 학습과 임계값 분석까지 하나의 파이프라인으로 연결했습니다.</p><div class="flow flow-four"><div class="flow-step"><b>01</b><span>RAW 데이터 처리</span></div><div class="flow-step"><b>02</b><span>특징 설계</span></div><div class="flow-step"><b>03</b><span>XGBoost 모델링</span></div><div class="flow-step"><b>04</b><span>임계값 분석</span></div></div>
+<h2>구조</h2><p class="section-intro">원시 진동 데이터를 분석 가능한 형태로 정리한 뒤 특징을 구성하고, NG 탐지에 맞는 평가와 임계값 조정까지 하나의 파이프라인으로 연결했습니다.</p><div class="flow flow-five"><div class="flow-step"><b>01</b><span>진동 데이터 구조화</span></div><div class="flow-step"><b>02</b><span>특징 설계</span></div><div class="flow-step"><b>03</b><span>XGBoost 학습</span></div><div class="flow-step"><b>04</b><span>NG 중심 평가</span></div><div class="flow-step"><b>05</b><span>임계값 조정</span></div></div>
 </div></section>
 <section class="project-section how-section"><div class="container">
 <h2>작동 방식</h2>
@@ -31,7 +31,7 @@
 <h2>담당한 부분</h2><div class="grid grid-3 contribution-list"><div class="card"><span class="focus-index">01 · 데이터</span><h3>데이터 구조화</h3><p>대규모 진동 데이터를 구조화했습니다.</p></div><div class="card"><span class="focus-index">02 · 모델링</span><h3>특징 설계 및 XGBoost</h3><p>특징 설계와 XGBoost 모델링을 수행했습니다.</p></div><div class="card"><span class="focus-index">03 · 평가</span><h3>NG 중심 평가</h3><p>NG 탐지를 우선해 평가 기준과 임계값을 분석했습니다.</p></div></div>
 </div></section>
 <section class="project-section result-section"><div class="container">
-<h2>결과</h2><div class="stat-grid"><div class="stat-box"><strong>0.915</strong><span>NG 재현율</span></div><div class="stat-box"><strong>0.759</strong><span>NG 정밀도</span></div><div class="stat-box"><strong>0.930</strong><span>PR-AUC</span></div><div class="stat-box"><strong>0.976</strong><span>ROC-AUC</span></div></div>
+<h2>결과</h2><p class="qual-result">전체 정확도보다 실제 이상 상태를 놓치지 않는 것을 우선해 평가 지표와 분류 임계값을 설계했습니다.</p><div class="stat-grid"><div class="stat-box"><strong>0.915</strong><span>NG 재현율</span></div><div class="stat-box"><strong>0.759</strong><span>NG 정밀도</span></div><div class="stat-box"><strong>0.930</strong><span>PR-AUC</span></div><div class="stat-box"><strong>0.976</strong><span>ROC-AUC</span></div></div>
 <div class="table-wrap"><table><caption>OK·NG 분류 결과</caption><thead><tr><th scope="col">실제 / 예측</th><th scope="col">예측 OK</th><th scope="col">예측 NG</th></tr></thead><tbody><tr><th scope="row">실제 OK</th><td>175</td><td>16</td></tr><tr class="em-row"><th scope="row">실제 NG</th><td>4</td><td>49</td></tr></tbody></table></div><p>최종 임계값은 <b>0.17</b>을 적용했습니다. 전체 NG 53건 중 49건을 탐지하는 방향으로 모델을 구성했습니다.</p>
 </div></section>
 <section class="project-section lesson-section"><div class="container"><div class="lesson"><h2>배운 점</h2><strong>위험 정의 → 모델 구축 → 중요한 기준으로 평가</strong><p>좋은 모델은 단순히 정확도가 높은 모델이 아니라 실제 문제에서 중요한 오류를 먼저 정의하고, 그 위험에 맞는 평가 기준을 선택한 모델이라는 점을 배웠습니다.</p></div></div></section>
